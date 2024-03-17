@@ -1,0 +1,162 @@
+{
+	"info": {
+		"_postman_id": "12ca2942-12f4-4bbe-9447-916f54e3aaa6",
+		"name": "FlightBookingApplicationTest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32970062"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/user/add",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/user/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/flights/search?from=DEL&to=BLR&departDate=2&paxCount=1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/flights/search?from=DEL&to=BLR&departDate=2&paxCount=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"flights",
+						"search"
+					],
+					"query": [
+						{
+							"key": "from",
+							"value": "DEL"
+						},
+						{
+							"key": "to",
+							"value": "BLR"
+						},
+						{
+							"key": "departDate",
+							"value": "2"
+						},
+						{
+							"key": "paxCount",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/flights/book",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\": \"u12\",\r\n    \"flightNumber\": \"123\",\r\n    \"departDate\": 2,\r\n    \"fareType\": {\r\n        \"name\": \"F1\",\r\n        \"price\": 2000.0\r\n    },\r\n    \"seats\": [\r\n        {\"seatNumber\": \"1b\"}\r\n    ]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/flights/book",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"flights",
+						"book"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/flights/searchByPreference?from=DEL&to=BLR&departDate=2&paxCount=1&preferredAirline=6E&sortBy=price&sortType=desc",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/flights/searchByPreference?from=DEL&to=BLR&departDate=2&paxCount=1&preferredAirline=6E&sortBy=price&sortType=desc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"flights",
+						"searchByPreference"
+					],
+					"query": [
+						{
+							"key": "from",
+							"value": "DEL"
+						},
+						{
+							"key": "to",
+							"value": "BLR"
+						},
+						{
+							"key": "departDate",
+							"value": "2"
+						},
+						{
+							"key": "paxCount",
+							"value": "1"
+						},
+						{
+							"key": "preferredAirline",
+							"value": "6E"
+						},
+						{
+							"key": "sortBy",
+							"value": "price"
+						},
+						{
+							"key": "sortType",
+							"value": "desc"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
